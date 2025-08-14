@@ -112,3 +112,13 @@ docker run -p 8000:8000 px-kvstore
 ```
 
 The server will be accessible at `http://localhost:8000`.
+
+## Future Enhancements for Production Readiness
+
+- **Persistence:** The current in-memory store is volatile. For production, integrate a database like PostgreSQL or Redis, or at least file-based persistence.
+- **Observability:** Add structured logging, metrics (e.g., for Prometheus), and tracing to monitor the server's health and performance.
+- **Error Handling:** Implement more robust and consistent error handling, including graceful shutdown and input validation.
+- **Security:** Secure the API with authentication (e.g., API keys, OAuth2) and use HTTPS.
+- **Configuration:** Manage settings with configuration files or environment variables instead of hardcoding them.
+- **CLI Arguments:** Expose settings like port and host as command-line arguments for easier configuration.
+- **Packaging:** Package the application for easier distribution and installation (e.g., using `setuptools` or `Poetry`).
