@@ -72,7 +72,7 @@ The server listens on port `8000` by default.
 
 ### Prerequisites
 
-- Python 3.7+
+- Python 3.13+
 
 ### Running Locally
 
