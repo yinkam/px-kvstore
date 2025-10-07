@@ -51,6 +51,13 @@ class KeyValueStoreHandler(BaseHTTPRequestHandler):
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
 
+        parsed_path = urlparse(self.path)
+        
+        path_segments = parsed_path.path.lstrip("/").split("/")
+        
+        if path_segments[-1] == "undo":
+            self.store.undo()
+        
         try:
             data = json.loads(post_data.decode('utf-8'))
             key = data.get('key')
