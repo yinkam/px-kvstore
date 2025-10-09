@@ -1,4 +1,4 @@
-# px-kvstore by Yinka Makanjuola
+# py-kvstore
 
 A simple in-memory key-value store with a RESTful API.
 
@@ -78,8 +78,8 @@ The server listens on port `8000` by default.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/px-kvstore.git
-    cd px-kvstore
+    git clone https://github.com/your-username/py-kvstore.git
+    cd py-kvstore
     ```
 
 2.  **Run the server:**
@@ -102,13 +102,13 @@ python3 test_server.py
 ### Build the Docker Image
 
 ```bash
-docker build -t px-kvstore .
+docker build -t py-kvstore .
 ```
 
 ### Run the Docker Container
 
 ```bash
-docker run -p 8000:8000 px-kvstore
+docker run -p 8000:8000 py-kvstore
 ```
 
 The server will be accessible at `http://localhost:8000`.
