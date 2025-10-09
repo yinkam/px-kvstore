@@ -56,7 +56,14 @@ class KeyValueStoreHandler(BaseHTTPRequestHandler):
         path_segments = parsed_path.path.lstrip("/").split("/")
         
         if path_segments[-1] == "undo":
-            self.store.undo()
+
+            try:
+                self.store.undo()
+                self._set_headers(201)
+                self.wfile.write(json.dumps({'message': 'Undo successful.'}).encode('utf-8'))
+            except IndexError:
+                self._set_headers(400)
+                self.wfile.write(json.dumps({'error': 'No operation to undo.'}).encode('utf-8'))
         
         try:
             data = json.loads(post_data.decode('utf-8'))

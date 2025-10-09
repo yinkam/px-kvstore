@@ -68,6 +68,23 @@ The server listens on port `8000` by default.
   }
   ```
 
+### Undo the Last Operation
+
+- **Method:** `POST`
+- **Endpoint:** `/undo`
+- **Success Response (200 OK):**
+  ```json
+  {
+    "message": "Undo successful."
+  }
+  ```
+- **Error Response (400 Bad Request):**
+  ```json
+  {
+    "error": "No operation to undo."
+  }
+  ```
+
 ## Installation and Running
 
 ### Prerequisites
